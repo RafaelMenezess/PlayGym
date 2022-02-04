@@ -16,6 +16,7 @@ class User(models.Model):
     active = models.BooleanField(default=True)
     create_at = models.DateField(auto_now_add=True)
     update_at = models.DateField(auto_now=True)
+    is_admin = models.BooleanField(default=False)
 
     class Meta:
         abstract = True
