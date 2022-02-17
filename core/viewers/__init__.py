@@ -1,0 +1,4 @@
+from core.viewers.admin_registration_viewer import AdminRegistrationView
+from core.viewers.doctor_registration_viewer import DoctorRegistrationView
+from core.viewers.student_registration_viewer import StudentRegistrationView
+from core.viewers.instructor_registration_viewer import InstructorRegistrationView
