@@ -1,4 +1,4 @@
-from core.models.user import User
+from core.models.user import CustomUser
 from core.models.student import Student
 from core.models.doctor import Doctor
 from core.models.admin import Admin
