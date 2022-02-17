@@ -2,4 +2,3 @@ from api.serializers.student_serializer import StudentSerializer
 from api.serializers.admin_serializer import AdminSerializer
 from api.serializers.doctor_serializer import DoctorSerializer
 from api.serializers.instructor_serializer import InstructorSerializer
-
