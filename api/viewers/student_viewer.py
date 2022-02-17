@@ -4,9 +4,8 @@ from api.serializers import StudentSerializer
 from rest_framework import viewsets
 
 
-
 class StudentViewSet(viewsets.ModelViewSet):
-    '''List all User, or create a new User.'''
+    """List all User, or create a new User."""
 
     queryset = Student.objects.all()
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
