@@ -1,4 +1,3 @@
-from tkinter import font
 from api.viewers.admin_viewer import AdminViewSet
 from api.viewers.doctor_viewer import DoctorViewSet
 from api.viewers.instructor_viewer import InstructorViewSet
