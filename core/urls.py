@@ -11,6 +11,6 @@ from core.viewers import (
 urlpatterns = [
     path("student", StudentRegistrationView.as_view(), name="register-student"),
     path("admin", AdminRegistrationView.as_view(), name="register-admin"),
-    path("doctor", InstructorRegistrationView.as_view(), name="register-doctor"),
-    path("instructor", DoctorRegistrationView.as_view(), name="register-instructor"),
+    path("doctor", DoctorRegistrationView.as_view(), name="register-doctor"),
+    path("instructor", InstructorRegistrationView.as_view(), name="register-instructor"),
 ]
