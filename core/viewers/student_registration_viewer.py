@@ -8,3 +8,6 @@ class StudentRegistrationView(RegisterView):
 
     permission_classes = [permissions.AllowAny]
     serializer_class = StudentRegistrationSerializer
+
+    def get_queryset(self):
+        pass
