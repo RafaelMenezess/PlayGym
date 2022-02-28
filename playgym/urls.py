@@ -15,14 +15,32 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+from rest_framework import permissions
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+
+
+schema_view = get_schema_view(
+    openapi.Info(
+        title="PlaGym API",
+        default_version="v1",
+        description="Descrição do projeto",
+    ),
+    public=True,
+    permission_classes=[permissions.AllowAny],
+)
 
 app_name = "core"
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
-    path("", include(("api.urls", "api"), namespace="api")),
+    path("", schema_view.with_ui("redoc", cache_timeout=0)),
     path("api/register/", include(("core.urls", "core"), namespace="registration")),
+    path("api/", include(("api.urls", "api"), namespace="api")),
     path("dj_rest_auth/", include("dj_rest_auth.urls")),
     path("dj_rest_auth/registration/", include("dj_rest_auth.registration.urls")),
+    path("token", TokenObtainPairView.as_view(), name="token_obtain_pai"),
+    path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
 ]
