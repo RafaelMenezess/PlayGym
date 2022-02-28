@@ -1,12 +1,16 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 from api.viewers import (
     StudentViewSet,
     AdminViewSet,
     DoctorViewSet,
     InstructorViewSet,
+    StudentScheduleView,
+    ScheduleConfigView,
+    DoctorScheduleView,
+    DoctorScheduleDetailsView,
+    StudentScheduleDetailsView,
 )
 
 
@@ -17,7 +21,10 @@ router.register(r"doctor", DoctorViewSet)
 router.register(r"instructor", InstructorViewSet)
 
 urlpatterns = [
-    path("api/", include(router.urls)),
-    path("token", TokenObtainPairView.as_view(), name="token_obtain_pai"),
-    path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+    path("", include(router.urls)),
+    path("schedule_config/", ScheduleConfigView.as_view()),
+    path("student_schedule/", StudentScheduleView.as_view()),
+    path("doctor_schedule/", DoctorScheduleView.as_view()),
+    path("doctor_schedule/<int:pk>", DoctorScheduleDetailsView.as_view()),
+    path("student_schedule/<int:pk>", StudentScheduleDetailsView.as_view()),
 ]
