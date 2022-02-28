@@ -15,5 +15,8 @@ class Student(models.Model):
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, null=True
     )
 
+    def __str__(self):
+        return str(self.registration_number)
+
     class Meta:
         db_table = "student"
