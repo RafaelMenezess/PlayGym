@@ -1,10 +1,10 @@
 from rest_framework import permissions
 from core.models import Student
 from api.serializers import StudentSerializer
-from rest_framework import viewsets
+from api.viewers.custom_model_view_set import CustomModelViewSet
 
 
-class StudentViewSet(viewsets.ModelViewSet):
+class StudentViewSet(CustomModelViewSet):
     """List all User, or create a new User."""
 
     queryset = Student.objects.all()
