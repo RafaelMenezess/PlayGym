@@ -15,5 +15,8 @@ class Doctor(models.Model):
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, null=True
     )
 
+    def __str__(self):
+        return self.crm
+
     class Meta:
         db_table = "doctor"
