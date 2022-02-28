@@ -8,3 +8,6 @@ class AdminRegistrationView(RegisterView):
 
     permission_classes = [permissions.AllowAny]
     serializer_class = AdminRegistrationSerializer
+
+    def get_queryset(self):
+        pass
