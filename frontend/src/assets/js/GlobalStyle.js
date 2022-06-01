@@ -10,4 +10,8 @@ export const GlobalStyle = createGlobalStyle`
     #root{
         height: 100%;
     }
+
+    .src__ContentRow-sc-178mgjs-3 {
+        z-index: 4;
+    }
 `;
