@@ -41,9 +41,11 @@ function SignUp() {
         const json = await response.json();
         if (!response.ok) {
             alert(JSON.stringify(json));
+        } else {
+            alert("Cadastrado como sucesso.");
+            window.location.href = '/';
         }
-        alert("Cadastrado como sucesso.");
-        window.location.href = '/';
+
     }
 
     return (
