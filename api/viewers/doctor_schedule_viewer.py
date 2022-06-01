@@ -7,6 +7,7 @@ from django.core.exceptions import ObjectDoesNotExist
 
 from api.serializers import DoctorScheduleSerializer
 from core.models import DoctorSchedule, ScheduleConfig
+from core.models.student import Student
 
 
 class DoctorScheduleView(APIView):
@@ -41,10 +42,22 @@ class DoctorScheduleView(APIView):
                 status=status.HTTP_400_BAD_REQUEST,
             )
 
-        serializer = DoctorScheduleSerializer(data=request.data)
+        student = Student.objects.get(student_id=request.user.id)
+        if not student:
+            return Response(serializer.data, status=status.HTTP_400_BAD_REQUEST)
+
+        serializer = DoctorScheduleSerializer(
+            data={
+                "doctor": 1,
+                "student": student.id,
+                "schedule_date": request.data["schedule_date"],
+                "schedule_time": request.data["schedule_time"],
+            }
+        )
         if serializer.is_valid():
             serializer.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.data, status=status.HTTP_400_BAD_REQUEST)
 
 
 class DoctorScheduleDetailsView(APIView):
