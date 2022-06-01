@@ -33,7 +33,7 @@ function Login({ setToken }) {
             <div className="card">
                 <div className="card-header">
                     <h3>PlayGym</h3>
-                    <div class="d-flex justify-content-end social_icon">
+                    <div className="d-flex justify-content-end social_icon">
                         <span><i className="fab fa-facebook-square"><FaFacebookSquare /></i></span>
                         <span><i className="fab fa-google-plus-square"><FaGooglePlusSquare /></i></span>
                         <span><i className="fab fa-instagram-square"><FaInstagramSquare /></i></span>
@@ -52,7 +52,7 @@ function Login({ setToken }) {
                             <div className="input-group-prepend">
                                 <span className="input-group-text"><i className="fas fa-key"><FaKey /></i></span>
                             </div>
-                            <input type="password" class="form-control" placeholder="password" onChange={e => setPassword(e.target.value)} />
+                            <input type="password" className="form-control" placeholder="password" onChange={e => setPassword(e.target.value)} />
                         </div>
                         <div className="row align-items-center remember">
                             <input type="checkbox" />Remember Me

@@ -15,10 +15,10 @@ function Footer() {
     const hover3 = useHover({ color: "white" })
 
     return (
-        <footer class="bg-dark text-center text-white">
-            <div class="container p-4 pb-0">
-                <section class="mb-0">
-                    <div class="d-flex-center" style={{
+        <footer className="bg-dark text-center text-white">
+            <div className="container p-4 pb-0">
+                <section className="mb-0">
+                    <div className="d-flex-center" style={{
                         fontSize: '40px',
                         padding: '0px',
                         marginLeft: '15px',
@@ -37,9 +37,9 @@ function Footer() {
                     </div>
                 </section>
             </div >
-            <div class="text-center p-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+            <div className="text-center p-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
                 © 2022 Copyright:
-                <a class="text-white" href="/"> PlayGym.com.br</a>
+                <a className="text-white" href="/"> PlayGym.com.br</a>
             </div>
         </footer >
     );
