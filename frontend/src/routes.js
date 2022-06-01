@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { GlobalStyle } from './assets/js/GlobalStyle';
 import Main from './pages/Main/Main';
+import DoctorSchedule from './pages/DoctorSchedule/DoctorSchedule';
 import SiteNav, { ContentGroup } from 'react-site-nav';
 import Login from './components/Login';
 import Logout from './components/Logout/Logout';
@@ -30,14 +31,14 @@ export default function AppRouter() {
                 fontFamily="Hubballi, sans-serif"
                 contentTop="2"
             >
-                <ContentGroup title="Home" rootUrl="" />
-                <ContentGroup title="Agenda" height="200">
-                    <ul style={{ zIndex: -1 }}>
+                <ContentGroup title="Home" rootUrl="/" />
+                <ContentGroup title="Agendamento" height="200">
+                    <ul>
                         <li><Link to="/my-story">Academia</Link></li>
-                        <li><Link to="/my-story">Médico</Link></li>
+                        <li><Link to="/doctor-schedule">Médico</Link></li>
                     </ul>
                 </ContentGroup>
-                <ContentGroup title="Contact" height="200" />
+                <ContentGroup title="Contato" height="200" />
                 <ContentGroup title="Perfil" height="200">
                     <ul>
                         <li><Link to="/my-story">Meu perfil</Link></li>
@@ -49,6 +50,7 @@ export default function AppRouter() {
             <Routes>
                 <Route path='/' element={<Main />} />
                 <Route path='/logout' element={<Logout />} />
+                <Route path='/doctor-schedule' element={<DoctorSchedule />} />
             </Routes>
             <Footer />
         </Router >

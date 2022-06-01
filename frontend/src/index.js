@@ -4,10 +4,11 @@ import './assets/css/index.css';
 import reportWebVitals from './reportWebVitals';
 import Router from './routes';
 
+
 ReactDOM.render(
-  <React.StrictMode>
+  < React.StrictMode >
     <Router />
-  </React.StrictMode>,
+  </React.StrictMode >,
   document.getElementById('root')
 );
 
