@@ -8,6 +8,8 @@ import Logout from './components/Logout/Logout';
 import Signup from './components/SignUp/Signup';
 import useToken from './components/Login/useToken';
 import Footer from './components/Footer/Footer';
+import AcademySchedule from './pages/AcademySchedule/AcademySchedule';
+import Contact from './pages/Contact/Contact';
 
 
 export default function AppRouter() {
@@ -34,15 +36,14 @@ export default function AppRouter() {
                 <ContentGroup title="Home" rootUrl="/" />
                 <ContentGroup title="Agendamento" height="200">
                     <ul>
-                        <li><Link to="/my-story">Academia</Link></li>
+                        <li><Link to="/academy-schedule">Academia</Link></li>
                         <li><Link to="/doctor-schedule">Médico</Link></li>
                     </ul>
                 </ContentGroup>
-                <ContentGroup title="Contato" height="200" />
+                <ContentGroup title="Contato" rootUrl="/contact" />
                 <ContentGroup title="Perfil" height="200">
                     <ul>
-                        <li><Link to="/my-story">Meu perfil</Link></li>
-                        <li><Link to="/my-story">Avisos</Link></li>
+                        <li><Link to="/account">Meu perfil</Link></li>
                         <li><Link to="/logout">Logout</Link></li>
                     </ul>
                 </ContentGroup>
@@ -51,6 +52,8 @@ export default function AppRouter() {
                 <Route path='/' element={<Main />} />
                 <Route path='/logout' element={<Logout />} />
                 <Route path='/doctor-schedule' element={<DoctorSchedule />} />
+                <Route path='/academy-schedule' element={<AcademySchedule />} />
+                <Route path='/contact' element={<Contact />} />
             </Routes>
             <Footer />
         </Router >
